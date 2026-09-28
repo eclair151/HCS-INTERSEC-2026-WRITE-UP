@@ -47,13 +47,16 @@ So the requirement is we need `jmp rsp` gadget, let's check it.<br>
 <br>
 Oh no, we don't have `jmp rsp` so how? don't worry. since `rax` return our input and there is `jmp rax` gadget, the solution is to make `jmp rsp` by ourself by wrtting the opcode of `jmp rsp` in the first two byte out input.<br>
 <br>
-- `opcode jmp rsp (0x02)`<br>
-- `payload (0x26)`<br>
-- `jmp rax address (0x08)`<br>
-- `shellcode (~)`<br>
+
+- opcode jmp rsp (0x02)<br>
+- payload (0x26)<br>
+- jmp rax address (0x08)<br>
+- shellcode (~)<br>
+
 <br>
-So that's good idea
+So that's good idea.<br>
 <br>
+
 ### - Exploit
 Base on our discussion above, here's my full exploit.<br>
 <br>
